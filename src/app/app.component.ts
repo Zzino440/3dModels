@@ -21,14 +21,21 @@ export class AppComponent implements OnInit, AfterViewInit {
   camera!: THREE.PerspectiveCamera;
   renderer!: THREE.WebGLRenderer;
   controls!: OrbitControls;
-  modelPath = "assets/IFC_Facade.glb"
+  modelPath = "assets/Architecture/Architecture.glb"
+  modelPath2= "assets/IFC_Architecture.glb"
+  modelPath3="assets/MEP.glb"
+  modelPaths = [this.modelPath]; // Array dei percorsi dei modelli
+
+
+  raycaster = new THREE.Raycaster();
+  mouse = new THREE.Vector2();
+  selectedObject: THREE.Object3D | null = null;
 
   constructor() {
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     this.camera.position.set(50, 50, 200); // Imposta la camera più lontana
     this.renderer = new THREE.WebGLRenderer({antialias: true});
-    /*    this.renderer.setPixelRatio(window.devicePixelRatio); // Opzionale, per una migliore qualità dell'immagine*/
   }
 
   ngOnInit() {
@@ -37,15 +44,26 @@ export class AppComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit() {
+    //inizializzo renderer
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.canvasRef.nativeElement.appendChild(this.renderer.domElement);
+
     // Inizializza OrbitControls
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.enableDamping = true; // Opzionale, ma fornisce un'esperienza di controllo più fluida
     this.controls.dampingFactor = 0.05;
+
+
     this.loadModel();
     this.animate();
     window.addEventListener('keydown', this.onKeyDown.bind(this));
+
+    // Configura lo zoom
+    this.controls.enableZoom = true; // Abilita lo zoom
+    this.controls.zoomSpeed = 1.0; // Regola la velocità di zoom
+
+    //change the center of the 3d world on mouse click
+/*    this.renderer.domElement.addEventListener('click', this.onMouseClick.bind(this), false);*/
   }
 
   animate(): void {
@@ -55,16 +73,20 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   loadModel(): void {
     const loader = new GLTFLoader();
-    loader.load(this.modelPath, (gltf) => {
-      console.log('gltf: ', gltf)
-      this.scene.add(gltf.scene);
 
-      this.setOthers();
-      this.updateWindowSize();
+    for (const path of this.modelPaths) {
+      loader.load(path, (gltf) => {
+        console.log('gltf: ', gltf);
+        let object = gltf.scene;
+        console.log('object:',object)
+        this.scene.add(object);
+        this.setOthers();
+      }, undefined, (error) => {
+        console.error('An error happened:', error);
+      });
+    }
 
-    }, undefined, (error) => {
-      console.error('An error happened:', error);
-    });
+    this.updateWindowSize();
   }
 
   setOthers() {
@@ -113,5 +135,25 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     // Aggiorna i controlli Orbit dopo lo spostamento della camera
     this.controls.update();
+  }
+
+  onMouseClick(event: MouseEvent) {
+    // Calcola la posizione del mouse nel sistema di coordinate normalizzato
+    this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    this.mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    // Aggiorna il raycaster con la posizione del mouse
+    this.raycaster.setFromCamera(this.mouse, this.camera);
+
+    // Calcola gli oggetti che intersecano il raggio dal raycaster
+    const intersects = this.raycaster.intersectObjects(this.scene.children, true);
+
+    if (intersects.length > 0) {
+      const pointOfInterest = intersects[0].point; // Punto di intersezione con l'oggetto più vicino
+
+      // Imposta questo punto come nuovo target per OrbitControls
+      this.controls.target.set(pointOfInterest.x, pointOfInterest.y, pointOfInterest.z);
+      this.controls.update();
+    }
   }
 }
