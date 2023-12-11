@@ -1,15 +1,17 @@
-&.la-visione, .carousel-indicators {
-  position: absolute!important;
-  bottom: 200px !important;
+.la-visione {
+  .carousel-indicators {
+    position: absolute!important;
+    bottom: 200px !important;
+  }
 }
 
-.carousel-indicators{
-/*  button.active{
-    background-color: green!important;
-  }*/
-  button{
-    width: 70px!important;
-/*    background-color: grey!important;*/
+.carousel-indicators {
+  /*  button.active{
+      background-color: green!important;
+    }*/
+  button {
+    width: 70px !important;
+    /*    background-color: grey!important;*/
   }
 }
 
