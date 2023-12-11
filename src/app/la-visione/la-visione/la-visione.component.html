@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <!-- Colonna della visione -->
+    <div class="col-md-4">
+      <h1 class="pt-5">La visione</h1>
+      <p>Un luogo di lavoro contemporaneo e innovativo, in grado di interpretare le dinamiche dei mutamenti sociali e
+        umani.</p>
+      <p>Uno spazio di lavoro resiliente, in grado di adattarsi continuamente per consentire lo svolgimento delle
+        attività lavorative previste in un contesto di benessere, sostenibilità e cultura, dove l’uomo è l’attore
+        protagonista.</p>
+      <p>Il progetto si pone l’obiettivo di superare le gerarchie standardizzate dei luoghi di lavoro, eliminando
+        concetti superati come quelli dei percorsi obbligati, degli spazi chiusi e delle sequenze ordinate di stanze in
+        favore di un ambiente caratterizzato da permeabilità, fluidità e condivisione.</p>
+    </div>
+
+    <!-- Colonna del carosello -->
+    <div class="col-md-8">
+      <ngb-carousel class="pt-5" [showNavigationArrows]="showNavigationArrows"
+                    [showNavigationIndicators]="showNavigationIndicators" *ngIf="carouselItems.length">
+        <ng-template ngbSlide *ngFor="let item of carouselItems">
+          <div class="row">
+            <div class="col-md">
+              <img [src]="item.imageUrl" alt="Immagine del carosello">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <div class="carousel-text-container">
+                <h3 class="carousel-title">{{ item.title }}</h3>
+                <p class="carousel-description">{{ item.description }}</p>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+
+  </div>
+</div>

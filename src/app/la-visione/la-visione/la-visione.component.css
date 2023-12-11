@@ -1,0 +1,15 @@
+.carousel-text-container {
+  padding: 30px 20px 0 20px;
+  min-height: 150px; /* Imposta l'altezza minima o fissa in base al tuo design */
+}
+
+.carousel-title {
+  height: 48px; /* Altezza fissa per il titolo */
+  overflow: hidden;
+  margin-bottom: 8px; /* Spazio tra titolo e descrizione */
+}
+
+.carousel-description {
+  height: 72px; /* Altezza fissa per la descrizione */
+  overflow: hidden;
+}

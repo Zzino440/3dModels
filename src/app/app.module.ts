@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import {BimViewerComponent} from "./bim-viewer/bim-viewer.component";
 import { LaVisioneComponent } from './la-visione/la-visione/la-visione.component';
+import {NgbCarouselModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -11,9 +12,10 @@ import { LaVisioneComponent } from './la-visione/la-visione/la-visione.component
     BimViewerComponent,
     LaVisioneComponent
   ],
-  imports: [
-    BrowserModule,
-  ],
+    imports: [
+        BrowserModule,
+        NgbCarouselModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
