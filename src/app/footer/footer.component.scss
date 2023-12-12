@@ -3,15 +3,12 @@
 
 .footer{
     background-color: $primaryBlue;
-
 }
+
 .logo{
-    line-height: 1;
-    margin-left: 230px;
-    margin-top: 10px;
     color: $primaryWhite;
-
 }
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -30,7 +27,7 @@ ul {
   }
 
   .list-item:not(:last-child)::after {
-    content: '|';
+    content: '| ';
     margin-left: 5px;
 
 }
@@ -47,7 +44,6 @@ ul {
   color: $primaryWhite;
   font-size: 15px;
   margin-top: 50px;
-
 }
 .custom-h6{
   color: $primaryWhite;
