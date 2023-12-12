@@ -1,0 +1,74 @@
+// Importa le variabili
+@import 'src/assets/sass/variables.scss';
+
+.footer{
+    background-color: $primaryBlue;
+
+}
+.logo{
+    line-height: 1;
+    margin-left: 230px;
+    margin-top: 10px;
+    color: $primaryWhite;
+
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 55px;
+  }
+
+  .list-item {
+    display: inline;
+    color: $primaryWhite;
+  }
+
+  .list-item a {
+    display: inline;
+    color: $primaryWhite;
+  }
+
+  .list-item:not(:last-child)::after {
+    content: '|';
+    margin-left: 5px;
+
+}
+.span-custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 90px;
+  margin-left: auto;
+}
+
+.custom-h2{
+  color: $primaryWhite;
+  font-size: 15px;
+  margin-top: 50px;
+
+}
+.custom-h6{
+  color: $primaryWhite;
+  font-size: 10px;
+  margin-bottom: 50px;
+}
+
+  @media screen and (max-width: 767px) {
+    // Stili specifici per dispositivi mobili
+    .footer {
+      ul {
+        margin-bottom: 10px; // Modifica lo spazio tra la lista e il testo successivo nella versione mobile
+      }
+
+      h6 {
+        margin-top: 5px; // Modifica il margin-top per la versione mobile
+      }
+    }
+
+    .span-custom {
+      margin-top: 10px; // Modifica il margin-top per la versione mobile
+    }
+  }
+

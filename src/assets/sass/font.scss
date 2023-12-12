@@ -1,0 +1,108 @@
+@import './variables.scss';
+
+/* Font TitiliumWeb regular-bold-light*/
+@font-face {
+  font-family: 'TitilliumWeb Bold';
+  src: url('../fonts/TitilliumWeb-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+  
+@font-face {
+  font-family: 'TitilliumWeb Regular';
+  src: url('../fonts/TitilliumWeb-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TitilliumWeb SemiBold';
+  src: url('../fonts/TitilliumWeb-SemiBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RobotoMono Bold';
+  src: url('../fonts/RobotoMono-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RobotoMono Regular';
+  src: url('../fonts/RobotoMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'TitilliumWeb Bold', sans-serif; 
+  font-size: 48px;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: 'TitilliumWeb Bold', sans-serif; 
+  font-size: 40px;
+  font-weight: bold;
+}
+h3 {
+  font-family: 'TitilliumWeb Bold', sans-serif; 
+  font-size: 32px;
+  font-weight: bold;
+}
+h4{
+  font-family: 'TitilliumWeb SemiBold', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+}
+h5{
+  font-family: 'TitilliumWeb Regular', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+h6{
+  font-family: 'TitilliumWeb SemiBold', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.titillium-web {
+  font-family: 'TitilliumWeb Regular', sans-serif;
+}
+
+.roboto-mono {
+  font-family: 'RobotoMono Regular', sans-serif;
+}
+
+h1.roboto-mono{
+  font-family: 'RobotoMono Bold', sans-serif; 
+  font-size: 40px;
+  font-weight: bold;
+}
+h2.roboto-mono{
+  font-family: 'RobotoMono Bold', sans-serif; 
+  font-size: 32px;
+  font-weight: bold;
+}
+h3.roboto-mono{
+  font-family: 'RobotoMono Bold', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+}
+h4.roboto-mono{
+  font-family: 'RobotoMono Bold', sans-serif; 
+  font-size: 24px;
+  font-weight: bold;
+}
+h5.roboto-mono{
+  font-family: 'RobotoMono Regular', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+h6.roboto-mono{
+  font-family: 'RobotoMono Bold', sans-serif; 
+  font-size: 16px;
+  font-weight: bold;
+}
