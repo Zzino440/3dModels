@@ -14,9 +14,10 @@
     </div>
 
     <!-- Colonna del carosello -->
-    <div class="col-md-8 la-visione">
+    <div class="col-md-8 la-visione" #touchArea>
       <ngb-carousel class="pt-5" [showNavigationArrows]="showNavigationArrows"
-                    [showNavigationIndicators]="showNavigationIndicators" *ngIf="carouselItems.length">
+                    [showNavigationIndicators]="showNavigationIndicators" *ngIf="carouselItems.length"
+                    [interval]="0" #myCarousel="ngbCarousel">
         <ng-template ngbSlide *ngFor="let item of carouselItems">
           <div class="row">
             <div class="col-md">

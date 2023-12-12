@@ -3,6 +3,13 @@
     position: absolute!important;
     bottom: 200px !important;
   }
+
+  @media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+      display: none!important;
+    }
+  }
 }
 
 .carousel-indicators {
