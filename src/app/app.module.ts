@@ -7,6 +7,7 @@ import {NgbCarouselModule} from "@ng-bootstrap/ng-bootstrap";
 import {FooterComponent} from "./footer/footer.component";
 import {TappeProgettoComponent} from './tappe-progetto/tappe-progetto.component';
 import {LaVisioneComponent} from "./la-visione/la-visione.component";
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {LaVisioneComponent} from "./la-visione/la-visione.component";
     BimViewerComponent,
     LaVisioneComponent,
     FooterComponent,
-    TappeProgettoComponent
+    TappeProgettoComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
