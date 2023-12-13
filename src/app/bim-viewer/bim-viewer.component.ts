@@ -63,7 +63,6 @@ export class BimVewerComponent implements OnInit {
     ["./assets/bim/Architecture.xkt", "./assets/bim/Basement.xkt", "./assets/bim/Facade.xkt", "./assets/bim/MEP.xkt",
       "./assets/bim/Structure.xkt"].map((path) => {
       this.modelNode = this.xktLoader.load({
-        id: "myCanvas",
         src: path,
         saoEnabled: true,
         edges: true,
