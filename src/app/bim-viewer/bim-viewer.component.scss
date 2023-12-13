@@ -1,0 +1,32 @@
+#myViewer {
+  width: 100%; /* Assume la piena larghezza del contenitore */
+  height: 600px;
+  max-height: 600px;
+  position: relative; /* Posizionamento relativo per i contenuti interni */
+}
+
+#myCanvas,
+#myNavCubeCanvas {
+  width: 100% !important; /* Larghezza completa nel suo contenitore */
+  height: auto !important; /* Altezza automatica per mantenere le proporzioni */
+  display: block; /* Rimuove lo spazio extra sotto il canvas */
+}
+
+#myContent {
+  width: 100%; /* Larghezza completa del contenitore */
+  height: auto; /* Altezza automatica per mantenere le proporzioni */
+}
+
+@media (max-width: 768px) {
+  #myCanvas,
+  #myNavCubeCanvas {
+    height: 50vh; /* Altezza fissata a 50% della viewport per dispositivi mobili */
+  }
+}
+
+@media (max-width: 480px) {
+  #myCanvas,
+  #myNavCubeCanvas {
+    height: 30vh; /* Altezza più piccola per gli schermi dei cellulari */
+  }
+}

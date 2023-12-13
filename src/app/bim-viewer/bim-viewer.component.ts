@@ -29,12 +29,13 @@ export class BimViewerComponent implements OnInit {
     });
 
     this.xktLoader = new XKTLoaderPlugin(viewer);
-    ["./assets/Architecture1/Architecture.xkt.manifest.json"]
+    ["./assets/bim/model.xkt"]
       .map((path) => {
         console.log('path: ', path)
         this.modelNode = this.xktLoader.load({
-          id: "Architecture",
-          manifestSrc: path,
+          id: "myCanvas",
+          // src: "./assets/bim/AC20-Institute-Var-2.xkt",
+          src: path,
           edges: true // Emphasise edges
         });
       })
