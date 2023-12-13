@@ -1,0 +1,31 @@
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-md-12">
+      <ngb-carousel class="pt-5" [showNavigationArrows]="showNavigationArrows"
+                    [showNavigationIndicators]="showNavigationIndicators" *ngIf="carousel2Items.length"
+                    [interval]="0" #myCarousel="ngbCarousel">
+        <ng-template ngbSlide *ngFor="let img of carousel2Items">
+          <div class="row">
+            <div class="col-md">
+              <img [src]="img.imageUrl" alt="Immagine del carosello">
+            </div>
+          </div>
+        </ng-template>
+
+
+      </ngb-carousel>
+
+      <div class="row">
+        <div class="col-md">
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

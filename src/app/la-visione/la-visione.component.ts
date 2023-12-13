@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
-import {CAROUSEL_DATA, CarouselItemModel} from "../carousel-item.model";
+import {CAROUSEL_DATA, CarouselItemModel} from "./carousel-item.model";
 import {NgbCarousel, NgbCarouselConfig} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
