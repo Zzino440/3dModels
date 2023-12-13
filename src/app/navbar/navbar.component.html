@@ -4,25 +4,28 @@
     <div class="row d-flex w-100">
       <div class="col-md-2">
         <div class="row">
-          <div class="col-md-3 d-flex align-items-center">
-            <a class="navbar-brand" href="#">
-              <img src="assets/img/navbar/logo-navbar.png" alt="Logo Regione Lombardia">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          <!-- Menù ad hamburger a sinistra su dispositivi mobili -->
+          <div class="col-md-1 d-flex align-items-center order-2 order-md-1">
+            <button (click)="toggleSidenav()" class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarNavDropdown"
                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
           </div>
-          <div class="col-md d-flex align-items-center">
-            <div>
+          <!-- Logo a destra su dispositivi mobili -->
+          <div class="col-md d-flex align-items-center order-1 order-md-2">
+            <a class="navbar-brand ml-md-auto" href="#">
+              <img src="assets/img/navbar/logo-navbar.png" alt="Logo Regione Lombardia">
+            </a>
+            <div class="navbar-text d-none d-md-block">
               Regione <br> Lombardia
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-md-10 justify-content-end align-items-center d-flex">
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+      <div class="col-md-10  align-items-center d-flex">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="#la-visione">La visione </a>
@@ -49,4 +52,8 @@
     </div>
   </div>
 </nav>
+
+<div class="sidenav" [class.show]="isSidenavOpen">
+  <!-- Elementi della sidenav -->
+</div>
 

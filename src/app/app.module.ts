@@ -8,6 +8,7 @@ import {FooterComponent} from "./footer/footer.component";
 import {TappeProgettoComponent} from './tappe-progetto/tappe-progetto.component';
 import {LaVisioneComponent} from "./la-visione/la-visione.component";
 import { NavbarComponent } from './navbar/navbar.component';
+import {EsploraProgettoComponent} from "./esplora-progetto/esplora-progetto.component";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     LaVisioneComponent,
     FooterComponent,
     TappeProgettoComponent,
-    NavbarComponent
+    NavbarComponent,
+    EsploraProgettoComponent
   ],
   imports: [
     BrowserModule,

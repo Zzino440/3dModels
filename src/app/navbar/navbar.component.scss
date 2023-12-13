@@ -24,3 +24,35 @@
     max-height: 25px;
   }
 }
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav.show {
+  width: 250px; /* O la larghezza che preferisci */
+}
+
+/* Assicurati che il logo sia tutto a destra su dispositivi mobili */
+@media (max-width: 768px) { /* Bootstrap breakpoint per dispositivi medium */
+  .navbar-brand {
+    margin-left: auto; /* Spinge il logo a destra */
+  }
+
+  .navbar-toggler {
+    margin-right: auto; /* Spinge il toggler a sinistra */
+  }
+}
+
+
+/* Stilizzazione aggiuntiva per gli elementi all'interno della sidenav */
+
